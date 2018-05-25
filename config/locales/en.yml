@@ -14,14 +14,36 @@ en:
       about_p: "Find me in app/views/static_pages/about.html.erb"
       home_text: "Home"
       document: "Ruby on Rails Tutorial"
+      form_err: "The form contains"
+      err_find_user: "User not found !!!"
   header:
     app_name: "sample app"
     help_h1: "Help"
-    login: "Login"
+    login: "Login en"
+    user_head: "Users en"
+    account_head: "Account en"
+    profile_head: "Profile en"
+    setting_head: "Settings en"
+    log_out: "Log out en"
   footer:
     author: "Michael Hartl"
     about_h1: "About"
     contact_h1: "Contact"
     news: "News"
+  users:
+    create_acc: "Create my account"
+    label_cf_pass: "Confirmation"
+    label_name: "name"
+    label_email: "email"
+    label_pass: "password"
+  sessions:
+    new:
+      login_title: "Log in"
+      label_email: "email"
+      label_password: "password"
+      new_user: "New user? "
+      sing_up_now: "Sign up now!"
+    create:
+      err_login: "Invalid email/password combination"
 
 
