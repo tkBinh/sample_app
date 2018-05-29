@@ -19,12 +19,12 @@ en:
   header:
     app_name: "sample app"
     help_h1: "Help"
-    login: "Login en"
-    user_head: "Users en"
-    account_head: "Account en"
-    profile_head: "Profile en"
-    setting_head: "Settings en"
-    log_out: "Log out en"
+    login: "Login"
+    user_head: "Users"
+    account_head: "Account"
+    profile_head: "Profile"
+    setting_head: "Settings"
+    log_out: "Log out"
   footer:
     author: "Michael Hartl"
     about_h1: "About"
@@ -42,7 +42,7 @@ en:
       label_email: "email"
       label_password: "password"
       new_user: "New user? "
-      sing_up_now: "Sign up now!"
+      sing_up_now: "Sign up now! "
     create:
       err_login: "Invalid email/password combination"
 
