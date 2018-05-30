@@ -9,7 +9,7 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: {minimum:
-    Settings.length_max.password}
+    Settings.length_max.password}, allow_nil: true
 
   def self.digest string
     cost =
@@ -38,4 +38,6 @@ class User < ApplicationRecord
   def forget
     update_attribute :remember_digest, nil
   end
+
+  scope :ordered_by_name, ->{order(name: :asc)}
 end
