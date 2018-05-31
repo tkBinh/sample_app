@@ -34,6 +34,7 @@ en:
     flash_update_sc: "Profile updated"
     flash_update_dg: "Please log in."
     flash_update_delete: "User deleted"
+    flash_destroy_fail: "Error ! Delete failed"
     create_acc: "Create my account"
     label_cf_pass: "Confirmation"
     label_name: "name"
@@ -56,6 +57,8 @@ en:
       button_edit: "Save changes"
       edit_h1: "Update your profile"
       change: "Change"
+    create:
+      flash_mail_check: "Please check your email to activate your account."
   sessions:
     new:
       login_title: "Log in"
@@ -66,5 +69,17 @@ en:
       span_rmb_me: "Remember me on this computer"
     create:
       err_login: "Invalid email/password combination"
+      err_active: "Account not activated. Check your email for the activation link."
+  account_activations:
+    flash_success: "Account activated!"
+    flash_failed: "Invalid activation link"
+    h1_app_name: "Sample App"
+    p_hi: "Hi"
+    p_let_active: "Welcome to the Sample App! Click on the link below to activate your account:"
+    link_to_active: "Activate"
+    find_me: "find me in app/views/user_mailer/password_reset.html.erb"
+    text_user: "User"
+  mail_activation: "Account activation"
+
 
 
