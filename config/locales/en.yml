@@ -31,11 +31,31 @@ en:
     contact_h1: "Contact"
     news: "News"
   users:
+    flash_update_sc: "Profile updated"
+    flash_update_dg: "Please log in."
+    flash_update_delete: "User deleted"
     create_acc: "Create my account"
     label_cf_pass: "Confirmation"
     label_name: "name"
     label_email: "email"
     label_pass: "password"
+    label_password_cf: "password_confirmation"
+    delete: "delete"
+    delete_confirm: "You sure?"
+    index:
+      all_user_title: "All users"
+      label_name: "name"
+      label_email: "email"
+      label_pass: "password"
+      label_pass_cf: "password_confirmation"
+    new:
+      title_sign_up: "Sign up en"
+      button_text: "Create my account"
+    edit:
+      title_edit: "Edit user en"
+      button_edit: "Save changes"
+      edit_h1: "Update your profile"
+      change: "Change"
   sessions:
     new:
       login_title: "Log in"
