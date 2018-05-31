@@ -41,11 +41,25 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = t(".fldel")
+      flash[:success] = t ".fldel"
     else
-      flash[:danger] = t(".flfail")
+      flash[:danger] = t ".flfail"
     end
     redirect_to users_url
+  end
+
+  def following
+    @title = t "users.title_folowing"
+    @user = User.find_by id: params[:id]
+    @users = @user.following.paginate page: params[:page]
+    render "show_follow"
+  end
+
+  def followers
+    @title = t "users.title_folower"
+    @user = User.find_by id: params[:id]
+    @users = @user.followers.paginate page: params[:page]
+    render "show_follow"
   end
 
   private
