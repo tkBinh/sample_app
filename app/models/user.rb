@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
   before_save{email.downcase!}
   validates :name,  presence: true, length: {maximum: Settings.length_max.name}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -12,14 +11,14 @@ class User < ApplicationRecord
     Settings.length_max.password}, allow_nil: true
 
   def self.digest string
-    cost =
-      if ActiveModel::SecurePassword.min_cost
-        BCrypt::Engine.MIN_COST
-      else
-        BCrypt::Engine.cost
-      end
+    if ActiveModel::SecurePassword.min_cost
+      cost = BCrypt::Engine.MIN_COST
+    else
+      cost = BCrypt::Engine.cost
+    end
     BCrypt::Password.create string, cost: cost
   end
+<<<<<<< HEAD
 
   def self.new_token
     SecureRandom.urlsafe_base64
@@ -40,4 +39,6 @@ class User < ApplicationRecord
   end
 
   scope :ordered_by_name, ->{order(name: :asc)}
+=======
+>>>>>>> parent of 5adf118... Merge pull request #5 from thankBinh95/chapter_9
 end

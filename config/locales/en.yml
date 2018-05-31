@@ -63,7 +63,6 @@ en:
       label_password: "password"
       new_user: "New user? "
       sing_up_now: "Sign up now! "
-      span_rmb_me: "Remember me on this computer"
     create:
       err_login: "Invalid email/password combination"
 
