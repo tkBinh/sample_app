@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i(show edit update destroy)
 
   def index
-    @users = User.paginate(page: params[:page],
-      per_page: Settings.num_page).ordered_by_name
+    @users = User.ordered_by_name.paginate page: params[:page],
+      per_page: Settings.num_page
   end
 
   def new
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update_attributes(user_params)
+    if @user.update_attributes user_params
       flash[:success] = t ".flash_update_sc"
       redirect_to @user
     else
@@ -38,8 +38,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    flash[:success] = t ".flash_update_delete"
+    if @user.destroy
+      flash[:success] = t ".flash_update_delete"
+    else
+      flash[:success] = t ".flash_delete_fail"
+    end
     redirect_to users_url
   end
 

@@ -3,7 +3,6 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
-<<<<<<< HEAD
   def remember user
     user.remember
     cookies.permanent.signed[:user_id] = user.id
@@ -30,10 +29,6 @@ module SessionsHelper
     user.forget
     cookies.delete :user_id
     cookies.delete :remember_token
-=======
-  def current_user
-    @current_user ||= User.find_by id: session[:user_id]
->>>>>>> parent of 5adf118... Merge pull request #5 from thankBinh95/chapter_9
   end
 
   def logged_in?

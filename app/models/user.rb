@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum:
     Settings.length_max.password}, allow_nil: true
 
+  scope :ordered_by_name, ->{order(name: :asc)}
+
   def self.digest string
     if ActiveModel::SecurePassword.min_cost
       cost = BCrypt::Engine.MIN_COST
@@ -18,7 +20,6 @@ class User < ApplicationRecord
     end
     BCrypt::Password.create string, cost: cost
   end
-<<<<<<< HEAD
 
   def self.new_token
     SecureRandom.urlsafe_base64
@@ -37,8 +38,4 @@ class User < ApplicationRecord
   def forget
     update_attribute :remember_digest, nil
   end
-
-  scope :ordered_by_name, ->{order(name: :asc)}
-=======
->>>>>>> parent of 5adf118... Merge pull request #5 from thankBinh95/chapter_9
 end
