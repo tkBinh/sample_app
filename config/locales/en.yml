@@ -64,7 +64,43 @@ en:
       label_password: "password"
       new_user: "New user? "
       sing_up_now: "Sign up now! "
+      span_rmb_me: "Remember me on this computer"
+      forgot_pass: "[forgot password]"
     create:
       err_login: "Invalid email/password combination"
-
-
+      err_active: "Account not activated. Check your email for the activation link."
+  account_activations:
+    flash_success: "Account activated!"
+    flash_failed: "Invalid activation link"
+    h1_app_name: "Sample App"
+    p_let_active: "Welcome to the Sample App! Click on the link below to activate your account:"
+    link_to_active: "Activate"
+    mail_activation: "Account activation"
+    mail_reset: "Password reset"
+    text_reset_pass_1: "To reset your password click the link below:"
+    text_reset_pass_2: "This link will expire in two hours."
+    text_reset_pass_3: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+    h1_pass_reset: "Password reset"
+    p_text_click: "To reset your password click the link below:"
+    link_to_reset: "Reset password"
+    p_time_expire: "This link will expire in two hours."
+    p_long_text: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+  password_resets:
+    new:
+      title_forgot_pass: "Forgot password"
+      h1_forgot_pass: "Forgot password"
+      label_email_fp: "email"
+      button_submit: "Submit"
+    edit:
+      title_reset_pass: "Reset password"
+      submit_u_pass: "Update password"
+      cf_pass: "Confirmation"
+      label_password: "password"
+    create:
+      flash_info: "Email sent with password reset instructions"
+      flash_danger: "Email address not found"
+    update:
+      vali_pass: "can't be empty"
+      flash_sucess: "Password has been reset."
+    flash_error: "Password reset has expired."
+    flash_nil_user: "User not found !"

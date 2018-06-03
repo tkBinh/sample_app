@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: %i(show edit update destroy)
 
   def index
-    @users = User.ordered_by_name.paginate page: params[:page],
+    @users = User.order_name.paginate page: params[:page],
       per_page: Settings.num_page
   end
 
