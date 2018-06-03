@@ -1,0 +1,14 @@
+<% provide :title, t(".title_forgot_pass") %>
+<h1><%= t(".h1_forgot_pass") %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for :password_reset, url: password_resets_path do |f| %>
+
+      <%= f.label t(".label_email_fp") %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.submit t(".button_submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
