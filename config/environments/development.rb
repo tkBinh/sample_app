@@ -63,4 +63,6 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
   host = "example.com"
   config.action_mailer.default_url_options = { host: host, protocol: "https" }
+
+  config.middleware.use I18n::JS::Middleware
 end
