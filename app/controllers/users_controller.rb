@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: %i(index edit update destroy)
+  before_action :find_user, only: %i(show edit update destroy)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: :destroy
-  before_action :find_user, only: %i(show edit update destroy)
 
   def index
     @users = User.ordered_by_name.paginate page: params[:page],
@@ -18,9 +18,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      log_in @user
-      flash[:success] = t "static_pages.home.home_h1"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t ".flash_mail_check"
+      redirect_to root_url
     else
       render :new
     end
@@ -41,7 +41,8 @@ class UsersController < ApplicationController
     if @user.destroy
       flash[:success] = t ".flash_update_delete"
     else
-      flash[:success] = t ".flash_delete_fail"
+      render :index
+      flash[:danger] = t ".flash_destroy_fail"
     end
     redirect_to users_url
   end
