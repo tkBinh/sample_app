@@ -5,3 +5,4 @@ length_max:
 gravatar_size: 80
 gravatar_size_user: 50
 num_page: 10
+reset_time: 2

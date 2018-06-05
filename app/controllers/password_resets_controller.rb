@@ -1,5 +1,5 @@
 class PasswordResetsController < ApplicationController
-  before_action :get_user, only: %i(edit update)
+  before_action :load_user, only: %i(edit update)
   before_action :valid_user, only: %i(edit update)
   before_action :check_expiration, only: %i(edit update)
 
@@ -39,8 +39,10 @@ class PasswordResetsController < ApplicationController
     params.require(:user).permit :password, :password_confirmation
   end
 
-  def get_user
-    @user = User.find_by email: params[:email]
+  def load_user
+    @user = User.find_by email: params[:email] if @user.nil?
+    flash[:danger] = t ".flash_nil_user"
+    redirect_to root_url
   end
 
   def valid_user
@@ -54,3 +56,4 @@ class PasswordResetsController < ApplicationController
     redirect_to new_password_reset_url
   end
 end
+

@@ -1,11 +1,9 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
-  attr_accessor :remember_token, :activation_token
-=======
   attr_accessor :remember_token, :activation_token, :reset_token
->>>>>>> c643c5680c0e412e80eca4663ff0fe0f8b112305
+
   before_save :downcase_email
   before_create :create_activation_digest
+
   validates :name, presence: true, length: {maximum: Settings.length_max.name}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum:
@@ -16,16 +14,18 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum:
     Settings.length_max.password}, allow_nil: true
 
-  scope :ordered_by_name, ->{order(name: :asc)}
+  scope :order_name, ->{order name: :asc}
 
-  def self.digest string
-    @cost = BCrypt::Engine.MIN_COST if ActiveModel::SecurePassword.min_cost
-    @cost = BCrypt::Engine.cost
-    BCrypt::Password.create string, cost: @cost
-  end
+  class << self
+    def digest string
+      @cost = BCrypt::Engine.MIN_COST if ActiveModel::SecurePassword.min_cost
+      @cost = BCrypt::Engine.cost
+      BCrypt::Password.create string, cost: @cost
+    end
 
-  def self.new_token
-    SecureRandom.urlsafe_base64
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
 
   def remember
@@ -44,8 +44,7 @@ class User < ApplicationRecord
   end
 
   def activate
-    update_attribute :activated, true
-    update_attribute :activated_at, Time.zone.now
+    update_attributes activated: true, activated_at: Time.zone.now
   end
 
   def send_activation_email
@@ -63,13 +62,13 @@ class User < ApplicationRecord
   end
 
   def password_reset_expired?
-    reset_sent_at < 2.hours.ago
+    reset_sent_at < Settings.reset_time.hours.ago
   end
 
   private
 
   def downcase_email
-    self.email = email.downcase
+    self.email = email.downcase!
   end
 
   def create_activation_digest
