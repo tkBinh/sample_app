@@ -34,7 +34,7 @@ en:
     flash_update_sc: "Profile updated"
     flash_update_dg: "Please log in."
     flash_update_delete: "User deleted"
-    flash_delete_fail: "Can't delete !"
+    flash_destroy_fail: "Error ! Delete failed"
     create_acc: "Create my account"
     label_cf_pass: "Confirmation"
     label_name: "name"
@@ -57,6 +57,8 @@ en:
       button_edit: "Save changes"
       edit_h1: "Update your profile"
       change: "Change"
+    create:
+      flash_mail_check: "Please check your email to activate your account."
   sessions:
     new:
       login_title: "Log in"
@@ -103,4 +105,7 @@ en:
       vali_pass: "can't be empty"
       flash_sucess: "Password has been reset."
     flash_error: "Password reset has expired."
+<<<<<<< HEAD
     flash_nil_user: "User not found !"
+=======
+>>>>>>> master
