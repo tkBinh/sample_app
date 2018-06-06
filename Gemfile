@@ -7,11 +7,14 @@ gem "bcrypt", "3.1.12"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap-will_paginate", "~> 1.0"
+gem "carrierwave", "~> 1.2", ">= 1.2.2"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker", "~> 1.8", ">= 1.8.7"
+gem "i18n-js", "~> 3.0", ">= 3.0.7"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "~> 4.3", ">= 4.3.3"
+gem "mini_magick", "~> 4.8"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.0"
 gem "rubocop", "~> 0.54.0", require: false
@@ -20,6 +23,10 @@ gem "sqlite3"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "will_paginate", "~> 3.1", ">= 3.1.6"
+
+group :production do
+  gem "fog", "~> 2.0"
+end
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

@@ -6,3 +6,9 @@ gravatar_size: 80
 gravatar_size_user: 50
 num_page: 10
 reset_time: 2
+micropost_user_size_gravatar: 50
+zero: 0
+content_maximum: 140
+picture_size: 5
+limit_image_size: 400
+

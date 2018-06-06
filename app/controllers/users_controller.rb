@@ -13,7 +13,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show; end
+  def show
+    @microposts = @user.microposts.order_micropost.paginate(page: params[:page])
+  end
 
   def create
     @user = User.new user_params
@@ -39,10 +41,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = t ".flash_update_delete"
+      flash[:success] = t(".fldel")
     else
-      render :index
-      flash[:danger] = t ".flash_destroy_fail"
+      flash[:danger] = t(".flfail")
     end
     redirect_to users_url
   end
