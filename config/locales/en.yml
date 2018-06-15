@@ -12,7 +12,9 @@ en:
     errors: "error"
     h3_msfeed: "Micropost Feed"
     micropost_delete: "delete"
-    micropost_confirm: "You sure?"
+    micropost_confir m: "You sure?"
+    folowing: "following"
+    folower: "followers"
     home:
       sign_up: "Sign up"
       sign_up_des: "This will be a signup page for new users."
@@ -43,6 +45,10 @@ en:
     contact_h1: "Contact"
     news: "News"
   users:
+    submit_unfolow: "Unfollow"
+    submit_folow: "Follow"
+    title_folower: "Followers"
+    title_folowing: "Following"
     flash_update_sc: "Profile updated"
     flash_update_dg: "Please log in."
     fldel: "User deleted"
@@ -119,8 +125,6 @@ en:
       vali_pass: "can't be empty"
       flash_sucess: "Password has been reset."
     flash_error: "Password reset has expired."
-    flash_nil_user: "User not found !"
-  microposts:
     posted: "Posted"
     ago: " ago."
     create:

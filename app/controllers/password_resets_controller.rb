@@ -56,4 +56,3 @@ class PasswordResetsController < ApplicationController
     redirect_to new_password_reset_url
   end
 end
-
